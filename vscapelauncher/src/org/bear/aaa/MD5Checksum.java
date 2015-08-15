@@ -8,11 +8,11 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public final class a {
-   private static final char[] a = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+public final class MD5Checksum {
+   private static final char[] HEXTOCHAR = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
    public static String getLocalClientMD5String() throws Throwable {
-      File localJarFile = new File(org.bear.a.clientJarPath());
+      File localJarFile = new File(org.bear.Constants.clientJarPath());
 
       try {
          Throwable var1 = null;
@@ -99,8 +99,8 @@ public final class a {
       int var3 = 0;
 
       for(int var4 = 0; var4 < var1; ++var4) {
-         var2[var3++] = a[var0[var4] >> 4 & 15];
-         var2[var3++] = a[var0[var4] & 15];
+         var2[var3++] = HEXTOCHAR[var0[var4] >> 4 & 15];
+         var2[var3++] = HEXTOCHAR[var0[var4] & 15];
       }
 
       return new String(var2);

@@ -2,10 +2,10 @@ package org.bear.ui;
 
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicProgressBarUI;
-import org.bear.ui.b;
+import org.bear.ui.UI;
 
 class LauncherFrame$1 extends BasicProgressBarUI {
-   LauncherFrame$1(b var1) {
+   LauncherFrame$1(UI var1) {
    }
 
    protected Color getSelectionBackground() {

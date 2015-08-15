@@ -9,15 +9,15 @@ import java.net.URL;
 import java.util.Observable;
 
 import org.bear.aaa.c;
-import org.bear.aaa.d;
+import org.bear.aaa.UpdateManager;
 
-public final class b extends Observable implements Runnable {
+public final class Downloader extends Observable implements Runnable {
    private URL a;
    private int b;
    private int c;
    private c d;
 
-   public b(String var1) {
+   public Downloader(String var1) {
       try {
          this.a = new URL(var1);
       } catch (MalformedURLException var2) {
@@ -30,7 +30,7 @@ public final class b extends Observable implements Runnable {
    }
 
    public final void run() {
-      org.bear.ui.b.b.setEnabled(false);
+      org.bear.ui.UI.launchButton.setEnabled(false);
       RandomAccessFile var1 = null;
       InputStream var2 = null;
       boolean var15 = false;
@@ -39,7 +39,7 @@ public final class b extends Observable implements Runnable {
          try {
             var15 = true;
             File var3;
-            if((var3 = new File(org.bear.a.clientJarPath())).exists()) {
+            if((var3 = new File(org.bear.Constants.clientJarPath())).exists()) {
                var3.delete();
             }
 
@@ -78,9 +78,9 @@ public final class b extends Observable implements Runnable {
 
                int var6;
                if((var6 = (int)((float)this.c / (float)this.b * 100.0F)) > var24) {
-                  org.bear.ui.b.a.setValue(var6);
+                  org.bear.ui.UI.progress.setValue(var6);
                   var24 = var6;
-                  org.bear.ui.b.a.setString("Downloading Update: " + var6 + "%");
+                  org.bear.ui.UI.progress.setString("Downloading Update: " + var6 + "%");
                }
 
                var1.write(var25, 0, var5);
@@ -91,7 +91,7 @@ public final class b extends Observable implements Runnable {
             if(this.d == org.bear.aaa.c.a) {
                this.d = org.bear.aaa.c.b;
                this.b();
-               org.bear.aaa.d.b();
+               org.bear.aaa.UpdateManager.startUpdater();
                var15 = false;
             } else {
                var15 = false;

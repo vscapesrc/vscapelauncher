@@ -1,13 +1,13 @@
 package org.bear;
 
 import java.awt.Component;
-import org.bear.ui.b;
+import org.bear.ui.UI;
 
 public class Launcher {
-   private static b a;
+   private static UI ui;
 
    public static void main(String[] var0) {
-      (a = new b()).setVisible(true);
-      a.setLocationRelativeTo((Component)null);
+      (ui = new UI()).setVisible(true);
+      ui.setLocationRelativeTo((Component)null);
    }
 }

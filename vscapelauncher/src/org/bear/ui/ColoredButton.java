@@ -5,10 +5,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 
-public final class a extends JButton implements MouseListener {
-   public a(String var1, Color var2) {
-      super(var1);
-      this.setBackground(var2);
+public final class ColoredButton extends JButton implements MouseListener {
+   public ColoredButton(String text, Color color) {
+      super(text);
+      this.setBackground(color);
       this.setForeground(new Color(255, 255, 255));
       this.setBorderPainted(false);
       this.setFocusable(false);
